@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adeyemi Temilolu - Art, Tattoo &amp; Music | Creative Soul Space</title>
+<meta name="description" content="Adeyemi Temilolu (Papi TL) - visual artist, tattoo artist and musician based in Lagos, Nigeria. Painting, tattoo work, music, and the Creative Soul Space community.">
+<style>
+:root{
+  --ink:#0a0a0b; --ink2:#121214; --line:rgba(255,255,255,.10);
+  --fg:#ecebe7; --mut:#9a978f; --acc:#c9a227; --acc2:#e8c94a;
+  --serif:Georgia,'Times New Roman',serif; --sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --pad:clamp(20px,5vw,88px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--fg);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1400px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--acc);font-weight:500}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.06;letter-spacing:-.01em}
+h2{font-size:clamp(34px,5.2vw,68px)}
+h3{font-size:clamp(22px,2.6vw,32px)}
+h4{font-family:var(--serif);font-weight:400}
+p{color:var(--mut);max-width:62ch}
+p.lead{font-size:clamp(17px,1.5vw,21px);color:#bdb9b0}
+section{padding:clamp(70px,11vw,150px) 0;border-top:1px solid var(--line)}
+header{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+header.on{background:rgba(10,10,11,.88);border-color:var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px var(--pad);position:relative}
+.brand{font-family:var(--serif);font-size:19px;letter-spacing:.16em;text-transform:uppercase}
+.navlinks{display:flex;gap:30px;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.navlinks a{color:var(--mut);transition:color .3s}
+.navlinks a:hover{color:var(--acc2)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--fg);padding:8px 12px;font-size:16px;cursor:pointer}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;border-top:0}
+.hero .bg{position:absolute;inset:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;opacity:.30}
+.hero .bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(10,10,11,.30),var(--ink) 76%)}
+.hero .inner{position:relative;z-index:2;padding:130px var(--pad) 80px}
+.hero h1{font-size:clamp(46px,11vw,150px);letter-spacing:-.02em;margin:.22em 0 .14em}
+.hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.1vw,27px);color:#cfcbc2}
+.hero .tagline{margin:26px auto 0;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);max-width:46ch;line-height:2}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:44px}
+.btn{display:inline-block;padding:15px 34px;border:1px solid var(--acc);color:var(--acc2);font-size:11px;letter-spacing:.24em;text-transform:uppercase;transition:.35s}
+.btn:hover{background:var(--acc);color:#0a0a0b}
+.btn.solid{background:var(--acc);color:#0a0a0b}
+.btn.solid:hover{background:var(--acc2);border-color:var(--acc2)}
+.btn.ghost{border-color:var(--line);color:var(--fg)}
+.btn.ghost:hover{border-color:var(--fg);background:transparent;color:var(--fg)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.split.rev .txt{order:2}
+.split .frame img{width:100%;height:100%;object-fit:cover;max-height:78vh}
+.frame{position:relative;overflow:hidden}
+.frame::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px var(--line);pointer-events:none}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:34px 0 42px}
+.filters button{background:none;border:1px solid var(--line);color:var(--mut);padding:9px 20px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);transition:.3s}
+.filters button:hover{color:var(--fg);border-color:var(--fg)}
+.filters button.active{background:var(--acc);border-color:var(--acc);color:#0a0a0b}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.tile{cursor:zoom-in;background:var(--ink2)}
+.tile img{width:100%;height:auto;transition:transform .8s cubic-bezier(.2,.7,.2,1),opacity .6s;opacity:.92}
+.tile:hover img{transform:scale(1.035);opacity:1}
+.tile figcaption{padding:15px 2px 6px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.tile .t{font-family:var(--serif);font-size:19px}
+.tile .m{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);text-align:right}
+.hide{display:none}
+.release{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,72px);align-items:center}
+.plate{display:inline-block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);border:1px solid var(--line);padding:7px 14px;margin-bottom:20px}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.links span{border:1px solid var(--line);padding:11px 20px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.comm{background:linear-gradient(180deg,var(--ink),#0f0e0c)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:48px}
+.card{background:var(--ink);padding:38px 30px}
+.card .n{font-family:var(--serif);font-size:15px;color:var(--acc);letter-spacing:.14em}
+.card h4{font-size:24px;margin:16px 0 12px}
+.card p{font-size:14.5px;max-width:none}
+.contact{text-align:center}
+.social{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-top:34px;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase}
+.social a{color:var(--mut);border-bottom:1px solid transparent;padding-bottom:3px;transition:.3s}
+.social a:hover{color:var(--acc2);border-color:var(--acc2)}
+.contact p{margin:0 auto}
+.note{font-size:12px;color:#6f6c66;letter-spacing:.06em;margin-top:34px}
+footer{padding:52px var(--pad);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px;color:#6f6c66;letter-spacing:.08em}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(6,6,7,.96);display:none;place-items:center;padding:5vh 5vw}
+.lb.on{display:grid}
+.lb img{max-width:100%;max-height:84vh;object-fit:contain}
+.lb .cap{position:absolute;bottom:3vh;left:0;right:0;text-align:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);padding:0 20px}
+.lb .x{position:absolute;top:18px;right:24px;background:none;border:0;color:var(--fg);font-size:32px;cursor:pointer;line-height:1}
+.lb .arw{position:absolute;top:50%;transform:translateY(-50%);background:none;border:1px solid var(--line);color:var(--fg);width:50px;height:50px;cursor:pointer;font-size:16px}
+.lb .arw:hover{border-color:var(--acc);color:var(--acc2)}
+.lb .p{left:20px}.lb .n{right:20px}
+@media(max-width:900px){
+  .split,.release{grid-template-columns:1fr}
+  .split.rev .txt{order:0}
+  .navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(10,10,11,.98);flex-direction:column;gap:0;padding:10px 0;border-bottom:1px solid var(--line)}
+  .navlinks.open{display:flex}
+  .navlinks a{padding:15px var(--pad)}
+  .burger{display:block}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .tile .m{display:none}
+  .tile .t{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.tile img{transition:none}}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <nav>
+    <a href="#top" class="brand">Adeyemi Temilolu</a>
+    <div class="navlinks" id="nl">
+      <a href="#space">The Space</a>
+      <a href="#art">Art</a>
+      <a href="#tattoo">Tattoo</a>
+      <a href="#music">Music</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="burger" id="bg" aria-label="Menu">&#9776;</button>
+  </nav>
+</header>
+
+<div class="hero" id="top">
+  <div class="bg"><img data-full="images/06ayfz0-IMG_6162.jpg" src="images/06ayfz0-IMG_6162.jpg" alt=""></div>
+  <div class="inner">
+    <div class="eyebrow rv">Lagos, Nigeria</div>
+    <h1 class="rv">Adeyemi<br>Temilolu</h1>
+    <div class="sub rv">Art &middot; Tattoo &middot; Music</div>
+    <p class="tagline rv">Seeing beyond the obstruction of the conspicuous, and embracing the captured strength.</p>
+    <div class="cta rv">
+      <a href="#art" class="btn solid">Explore the Work</a>
+      <a href="#space" class="btn ghost">Creative Soul Space</a>
+    </div>
+  </div>
+</div>
+
+
+<section class="comm" id="space">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt rv">
+        <div class="eyebrow">Creative Soul Space</div>
+        <h2 style="margin:20px 0 26px">A community for creative souls</h2>
+        <p class="lead">Creative Soul Space is a gathering place for artists, musicians, tattoo enthusiasts, collectors and curious minds.</p>
+        <p style="margin-top:20px">Built around the belief that art can connect people and expand perception, the space brings visual art, tattoo culture and music into one evolving experience. It is somewhere to share ideas, discover new work, collaborate, and grow through creativity.</p>
+        <p style="margin-top:20px">Whether you paint, play, tattoo, collect, or simply look &mdash; there is a place for you here.</p>
+        <div class="cta" style="justify-content:flex-start">
+          <a href="#contact" class="btn">Join the Community</a>
+        </div>
+      </div>
+      <div class="frame rv"><img data-full="images/0hrdsm8-IMG_2002.jpg" src="images/0hrdsm8-IMG_2002.jpg" alt="Three figures artwork"></div>
+    </div>
+  </div>
+</section>
+
+<section id="art">
+  <div class="wrap">
+    <div class="rv" style="max-width:760px">
+      <div class="eyebrow">Selected Work</div>
+      <h2 style="margin:20px 0 24px">Visual Art, Tattoo &amp; Process</h2>
+      <p>Paintings on canvas and board, healed and fresh tattoo work, and photographs from inside the studio. Filter to explore each discipline.</p>
+    </div>
+    <div class="filters rv" id="filters">
+      <button class="active" data-f="all">All</button>
+      <button data-f="art">Visual Art</button>
+      <button data-f="tattoo">Tattoo</button>
+      <button data-f="music">Music</button>
+      <button data-f="process">Process</button>
+    </div>
+    <div class="grid rv" id="grid">
+      <figure class="tile" data-cat="art">
+        <img class="gi" data-full="images/0zry9cn-4A35DD6F-A0C9-460B-B0AE-338F1A001650.jpg" src="images/0zry9cn-4A35DD6F-A0C9-460B-B0AE-338F1A001650.jpg" alt="Suspended Form" loading="lazy" style="aspect-ratio:0.77">
+        <figcaption><span class="t">Suspended Form</span><span class="m">Acrylic on canvas</span></figcaption>
+      </figure>
+      <figure class="tile" data-cat="art">
+        <img class="gi" data-full="images/0hpcbbd-IMG_1291.jpg" src="images/0hpcbbd-IMG_1291.jpg" alt="Studio Session" loading="lazy" style="aspect-ratio:0.81">
+        <figcaption><span class="t">Studio Session</span><span class="m">Acrylic on canvas</span></figcaption>
+      </figure>
+      <figure class="tile" data-cat="tattoo">
+        <img class="gi" data-full="images/096a31d-IMG_3471.jpeg" src="images/096a31d-IMG_3471.jpeg" alt="Band Study" loading="lazy" style="aspect-ratio:0.56">
+        <figcaption><span class="t">Band Study</span><span class="m">Geometric band, forearm</span></figcaption>
+      </figure>
+      <figure class="tile" data-cat="art">
+        <img class="gi" data-full="images/0kn59ty-IMG_2118.jpg" src="images/0kn59ty-IMG_2118.jpg" alt="Interior Light" loading="lazy" style="aspect-ratio:0.8">
+        <figcaption><span class="t">Interior Light</span><span class="m">Charcoal on board</span></figcaption>
+      </figure>
+      <figure class="tile" data-cat="art">
+        <img class="gi" data-full="images/0hrdsm8-IMG_2002.jpg" src="images/0hrdsm8-IMG_2002.jpg" alt="Three Figures" loading="lazy" style="aspect-ratio:0.78">
+        <figcaption><span class="t">Three Figures</span><span class="m">Acrylic on canvas</span></figcaption>
+      </figure>
+      <figure class="tile" data-cat="tattoo">
+        <img class="gi" data-full="images/06fp545-IMG_2030.jpg" src="images/06fp545-IMG_2030.jpg" alt="Serpent Flash" loading="lazy" style="aspect-ratio:0.73">
+        <figcaption><span class="t">Serpent Flash</span><span class="m">Flash design</span></figcaption>
+      </figure>
+      <figure class="tile" data-cat="music">
+        <img class="gi" data-full="images/1uwrizg-IMG_1424.jpg" src="images/1uwrizg-IMG_1424.jpg" alt="Shalaye Suite" loading="lazy" style="aspect-ratio:0.79">
+        <figcaption><span class="t">Shalaye Suite</span><span class="m">Acrylic on canvas</span></figcaption>
+      </figure>
+      <figure class="tile" data-cat="process">
+        <img class="gi" data-full="images/0vm85kk-IMG_1367.jpeg" src="images/0vm85kk-IMG_1367.jpeg" alt="In Progress" loading="lazy" style="aspect-ratio:0.95">
+        <figcaption><span class="t">In Progress</span><span class="m">Studio process</span></figcaption>
+      </figure>
+      <figure class="tile" data-cat="art">
+        <img class="gi" data-full="images/00854ao-IMG_7077.jpg" src="images/00854ao-IMG_7077.jpg" alt="Checkered Figure" loading="lazy" style="aspect-ratio:0.75">
+        <figcaption><span class="t">Checkered Figure</span><span class="m">Acrylic on canvas</span></figcaption>
+      </figure>
+      <figure class="tile" data-cat="tattoo">
+        <img class="gi" data-full="images/0dnwyfz-IMG_3530.jpg" src="images/0dnwyfz-IMG_3530.jpg" alt="Script Line" loading="lazy" style="aspect-ratio:0.75">
+        <figcaption><span class="t">Script Line</span><span class="m">Fine-line lettering</span></figcaption>
+      </figure>
+      <figure class="tile" data-cat="tattoo">
+        <img class="gi" data-full="images/10cfl1q-IMG_0501.jpeg" src="images/10cfl1q-IMG_0501.jpeg" alt="Tiger Eyes" loading="lazy" style="aspect-ratio:0.61">
+        <figcaption><span class="t">Tiger Eyes</span><span class="m">Black and grey, upper arm</span></figcaption>
+      </figure>
+      <figure class="tile" data-cat="tattoo">
+        <img class="gi" data-full="images/0raolbv-IMG_0618.jpeg" src="images/0raolbv-IMG_0618.jpeg" alt="Tribal Shoulder" loading="lazy" style="aspect-ratio:0.58">
+        <figcaption><span class="t">Tribal Shoulder</span><span class="m">Tribal blackwork</span></figcaption>
+      </figure>
+      <figure class="tile" data-cat="tattoo">
+        <img class="gi" data-full="images/04w79kd-IMG_0684.jpeg" src="images/04w79kd-IMG_0684.jpeg" alt="Eagle and Lion" loading="lazy" style="aspect-ratio:0.9">
+        <figcaption><span class="t">Eagle and Lion</span><span class="m">Realism, lower legs</span></figcaption>
+      </figure>
+      <figure class="tile" data-cat="art">
+        <img class="gi" data-full="images/06ayfz0-IMG_6162.jpg" src="images/06ayfz0-IMG_6162.jpg" alt="Green Room" loading="lazy" style="aspect-ratio:0.95">
+        <figcaption><span class="t">Green Room</span><span class="m">Mixed media</span></figcaption>
+      </figure>
+      <figure class="tile" data-cat="process">
+        <img class="gi" data-full="images/07cjh3q-IMG_1615.jpg" src="images/07cjh3q-IMG_1615.jpg" alt="Sunflower Prayer" loading="lazy" style="aspect-ratio:0.84">
+        <figcaption><span class="t">Sunflower Prayer</span><span class="m">Studio process</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+
+<section id="tattoo">
+  <div class="wrap">
+    <div class="split rev">
+      <div class="txt rv">
+        <div class="eyebrow">Tattoo</div>
+        <h2 style="margin:20px 0 26px">Marked intentionally</h2>
+        <p class="lead">Original tattoos and flash designs carrying the same visual language as the paintings &mdash; figure, strength, transformation, and the forces that shape us.</p>
+        <p style="margin-top:20px">From fine-line script and geometric bandwork to black-and-grey realism and tribal blackwork, every piece is drawn for the person wearing it. Consultations begin with a conversation about what the mark should carry.</p>
+        <div class="cta" style="justify-content:flex-start">
+          <a href="#contact" class="btn solid">Book a Session</a>
+          <a href="#art" class="btn ghost">View Portfolio</a>
+        </div>
+      </div>
+      <div class="frame rv"><img data-full="images/04w79kd-IMG_0684.jpeg" src="images/04w79kd-IMG_0684.jpeg" alt="Eagle and lion tattoo work"></div>
+    </div>
+  </div>
+</section>
+
+<section id="music">
+  <div class="wrap">
+    <div class="release">
+      <div class="frame rv"><img data-full="images/1uwrizg-IMG_1424.jpg" src="images/1uwrizg-IMG_1424.jpg" alt="Figure playing a violin"></div>
+      <div class="txt rv">
+        <div class="eyebrow">Music</div>
+        <h2 style="margin:20px 0 24px">Papi TL</h2>
+        <span class="plate">Single &middot; 2026</span>
+        <h3>Shalaye</h3>
+        <p style="margin-top:14px">Adeyemi records and releases as <strong style="color:var(--fg);font-weight:500">Papi TL</strong>. His inspiration comes largely from music, and it feeds straight back into the paintings &mdash; the same emotional current running through both.</p>
+        <p style="margin-top:18px"><em>Shalaye</em> features WVVY and is available across the major streaming platforms.</p>
+        <div class="links">
+          <span>Spotify</span><span>Apple Music</span><span>Audiomack</span><span>YouTube</span><span>YouTube Music</span><span>Amazon Music</span><span>Deezer</span>
+        </div>
+        <div class="cta" style="justify-content:flex-start">
+          <a href="https://unitedmasters.com/m/shalaye-4" target="_blank" rel="noopener" class="btn solid">Listen to Shalaye</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt rv">
+        <div class="eyebrow">Artist Profile</div>
+        <h2 style="margin:20px 0 26px">Adeyemi Temilolu</h2>
+        <p>Born in Lagos and originally from Ijebu in Ogun State, Adeyemi Temilolu has lived most of his life in Lagos. He studied art at the University of Lagos and completed his industrial attachment at Triad Studio, Obalende. He graduated in 2018.</p>
+        <p style="margin-top:18px">He approaches every canvas with an open mind and an intentional approach. In his work, black depicts the strength of the mind. He employs a mix of charcoal on board and acrylic medium on canvas, using a limited range of black and grey values as opposed to a full spectrum of colour &mdash; both mediums blended finely so the figures appear real, yet surreal, with metaphysical body features.</p>
+        <p style="margin-top:18px">His output is a constant stream of colourful, lifelike figures: clearly secluded images that capture flashes of deep emotions, extending the intent of his feelings and experiences into unceasing ideas.</p>
+      </div>
+      <div class="frame rv"><img data-full="images/00854ao-IMG_7077.jpg" src="images/00854ao-IMG_7077.jpg" alt="Checkered figure artwork"></div>
+    </div>
+    <div class="split rev" style="margin-top:clamp(50px,8vw,110px)">
+      <div class="txt rv">
+        <h3 style="margin-bottom:22px">Beyond the conspicuous</h3>
+        <p>Glamorous wings, robotic body parts and, in some cases, animal prints appear on a simple nude or semi-nude being. Some of his subjects appear quite beautiful; others more frightening, questioning the reality of general perception. They are proposed to represent the constrained power in both men and women.</p>
+        <p style="margin-top:18px">Adeyemi began his creative path in order to encourage the individuals who view his work &mdash; inviting them to investigate the peculiar forces surrounding them, and to appreciate the beauty of growth. His aim is to create awareness that makes his audience see beyond the obstruction of the conspicuous.</p>
+        <p style="margin-top:18px">The concentrated segment of his painted figures is a fragment of conceptualisation &mdash; an art movement that emerged between the 1960s and 1970s to comprehend concepts that could not be effortlessly understood.</p>
+      </div>
+      <div class="frame rv"><img data-full="images/0vm85kk-IMG_1367.jpeg" src="images/0vm85kk-IMG_1367.jpeg" alt="Adeyemi painting in the studio"></div>
+    </div>
+  </div>
+</section>
+
+<section class="comm">
+  <div class="wrap">
+    <div class="rv" style="max-width:760px">
+      <div class="eyebrow">Creative Soul Space</div>
+      <h2 style="margin:20px 0 24px">Create. Connect. Collaborate. Grow.</h2>
+      <p>The space welcomes people across disciplines and levels of experience. Members discover artists, share work, attend gatherings, exchange ideas, and find opportunities for creative collaboration.</p>
+    </div>
+    <div class="cards rv">
+      <div class="card"><div class="n">01</div><h4>Share Work</h4><p>A home for paintings, tattoo designs, music, photography and everything in between &mdash; finished or in progress.</p></div>
+      <div class="card"><div class="n">02</div><h4>Gather</h4><p>Studio sessions, exhibitions, listening rooms and informal meetups across Lagos and beyond.</p></div>
+      <div class="card"><div class="n">03</div><h4>Collaborate</h4><p>Pair a painter with a producer, a tattoo artist with a photographer. Work made together, shown together.</p></div>
+      <div class="card"><div class="n">04</div><h4>Grow</h4><p>Feedback, mentorship and honest conversation for artists at every stage of the path.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Get in touch</div>
+      <h2 style="margin:20px 0 22px">Commissions, bookings &amp; collaborations</h2>
+      <p style="margin:0 auto">For artwork commissions, tattoo appointments, music collaborations, or to join Creative Soul Space, reach out directly.</p>
+      <div class="cta">
+        <a href="mailto:tosinorules.at@gmail.com" class="btn solid">tosinorules.at@gmail.com</a>
+        <a href="https://wa.me/2349095340188" target="_blank" rel="noopener" class="btn ghost">WhatsApp &middot; +234 909 534 0188</a>
+      </div>
+      <div class="social">
+        <a href="https://instagram.com/Temiloluofficial" target="_blank" rel="noopener">Instagram &middot; @Temiloluofficial</a>
+        <a href="https://tiktok.com/@Temiloluofficial" target="_blank" rel="noopener">TikTok &middot; @Temiloluofficial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>&copy; 2026 Adeyemi Temilolu &middot; Papi TL</span>
+  <span>@Temiloluofficial &middot; Lagos, Nigeria &middot; Creative Soul Space</span>
+</footer>
+
+<div class="lb" id="lb">
+  <button class="x" id="lbx" aria-label="Close">&times;</button>
+  <button class="arw p" id="lbp" aria-label="Previous">&#8592;</button>
+  <img id="lbi" src="" alt="">
+  <button class="arw n" id="lbn" aria-label="Next">&#8594;</button>
+  <div class="cap" id="lbc"></div>
+</div>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  addEventListener('scroll',function(){hdr.classList.toggle('on',scrollY>40)});
+  var bg=document.getElementById('bg'),nl=document.getElementById('nl');
+  bg.addEventListener('click',function(){nl.classList.toggle('open')});
+  nl.addEventListener('click',function(e){if(e.target.tagName==='A')nl.classList.remove('open')});
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+  var tiles=Array.prototype.slice.call(document.querySelectorAll('.tile'));
+  document.getElementById('filters').addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b)return;
+    document.querySelectorAll('#filters button').forEach(function(x){x.classList.remove('active')});
+    b.classList.add('active');
+    var f=b.dataset.f;
+    tiles.forEach(function(t){t.classList.toggle('hide',f!=='all'&&t.dataset.cat!==f)});
+  });
+  var lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbc=document.getElementById('lbc'),cur=0;
+  function vis(){return tiles.filter(function(t){return !t.classList.contains('hide')})}
+  function open(i){
+    var v=vis(); if(!v.length)return;
+    cur=(i+v.length)%v.length;
+    var t=v[cur],im=t.querySelector('img');
+    lbi.src=im.dataset.full; lbi.alt=im.alt;
+    lbc.textContent=t.querySelector('.t').textContent+' / '+t.querySelector('.m').textContent;
+    lb.classList.add('on'); document.body.style.overflow='hidden';
+  }
+  function close(){lb.classList.remove('on');document.body.style.overflow=''}
+  tiles.forEach(function(t){t.addEventListener('click',function(){open(vis().indexOf(t))})});
+  document.getElementById('lbx').addEventListener('click',close);
+  document.getElementById('lbp').addEventListener('click',function(e){e.stopPropagation();open(cur-1)});
+  document.getElementById('lbn').addEventListener('click',function(e){e.stopPropagation();open(cur+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb)close()});
+  addEventListener('keydown',function(e){
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')open(cur-1);
+    if(e.key==='ArrowRight')open(cur+1);
+  });
+})();
+</script>
+</body>
+</html>
